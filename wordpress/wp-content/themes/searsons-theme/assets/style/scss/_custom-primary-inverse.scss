@@ -1,0 +1,718 @@
+//--// Base Start //--//
+//** -- header ** --//
+.header {
+    // absolute //
+    &#header-absolute,
+    &#header-relative {
+        &.primary-inverse {
+            .box-logo {
+                svg {
+                    fill: var(--primary-inverse-foreground-d);
+                }   
+            }
+            
+            [class*="call-"] {
+                .icon {
+                     color: var(--primary-inverse-foreground-d);
+                }
+            }
+
+            //-- display --//
+            &.complete {
+                @include for-desktop-up {
+                    .menu-main {
+                        ul {
+                            li {
+                                a {
+                                    color: var(--primary-inverse-link-c);
+
+                                }
+                            }  
+                        }
+                    }
+                    
+                    .menu-pre-header {
+                        ul {
+                            li {
+                                a {
+                                    color: var(--primary-inverse-link-c);
+
+                                }
+                            }  
+                        }
+                    }
+
+                    //-- display --//
+                    .menu-main {
+                        ul {
+                            .sub-menu {
+                                background-color: var(--primary-inverse-link-b);
+                                @include border-box(var(--primary-inverse-shadow-a));
+
+                                > li {
+                                    &+li {
+                                        a {
+                                            &:before {
+                                                background-color: var(--primary-inverse-link-a);
+                                            }
+                                        }
+                                    } 
+
+                                    a {
+                                       color: var(--primary-inverse-link-c);
+                                    }
+                                }
+
+                                &:after {
+                                    border-bottom-color: var(--primary-inverse-link-b);
+                                }
+                            }
+                        }
+                    }
+                    //-- display --//
+                    
+                    //-- separator --//
+                    .menu-main {
+                        &.separator-default {
+                            ul {
+                                > li {
+                                    &+li {
+                                        &:before {
+                                            background-color: var(--primary-inverse-border-a);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .hold-pre-header {
+                        [class^="menu-"] {
+                            &.separator-default {
+                                ul {
+                                    > li {
+                                        &+li {
+                                            &:before {
+                                                background-color: var(--primary-inverse-border-b);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //-- separator --//
+                }
+            }
+            //-- display --//
+        }
+    }
+    // absolute //
+    
+    // relative //
+    &#header-relative {
+         &.primary-inverse {
+            background: var(--primary-inverse-background-a);
+         }
+    }
+    // relative //   
+}
+//** -- header ** --//
+//--// Base End //--//
+
+//--// Widgets Start //--//
+//** -- base -- **//
+[class^="widget-"] {
+    &.primary-inverse {
+        &, p, a, ul, ol {
+            color: var(--primary-inverse-foreground-a);
+        }
+        
+        .hold {
+            @include black-gradient-bg();
+            //background-color: var(--primary-inverse-background-b);
+        }
+        
+        .box-headline {
+            .h1,
+            .h2,
+            .h3 {
+                color: var(--primary-inverse-foreground-b);
+            }
+        }
+        
+        .box-notice {
+            p {
+                color: var(--primary-inverse-foreground-c);
+            }
+        }
+        
+        .custom-background {
+            background-color: var(--primary-inverse-background-b);
+        }
+        
+        ::selection {
+            color: var(--primary-inverse-background-a);
+            background-color: var(--primary-inverse-foreground-a);
+        }
+
+        ::-moz-selection {
+            color: var(--primary-inverse-background-a);
+            background-color: var(--primary-inverse-foreground-a);
+        }
+    }
+}
+//** -- base -- **//
+
+//** -- article -- **//
+.widget-article {    
+    &.primary-inverse {
+        .box-text {
+            p, ul, ol {
+                a:not(.button) {
+                    color: var(--primary-inverse-link-f);
+                }
+            }
+        }
+        
+        .box-image,
+        .box-embed {
+            [class^="hold-"] {
+                @include border-box(var(--primary-inverse-shadow-a));
+            }
+        }
+    }
+}
+//** -- article -- **//
+
+//** -- feed -- **//
+.widget-feed {
+    &.primary-inverse {
+        .hold-feed {
+            //-- carousel --//
+            &.carousel {
+                .flickity-prev-next-button {
+                    .arrow {
+                        fill: var(--primary-inverse-link-c);
+                    }
+                }
+				
+				.hold-icon {
+					padding-bottom: 33%; 
+				}
+            }
+            //-- carousel --//
+            
+            //-- accordion --// 
+            &.accordion {
+                @include border-box(var(--primary-inverse-shadow-a));
+            }
+            //-- accordion --// 
+            
+            //--  timeline --//
+            &.timeline {
+                .timeline-box {
+                    .card {
+                        &:after {
+                            @include for-phone-only {
+                                border-right-color: var(--primary-inverse-background-c);
+                            }
+                        }
+                    }
+                    
+                    @include for-tablet-up {
+                        &:nth-child(odd) {
+                            .card {
+                                &:after {
+                                    border-left-color: var(--primary-inverse-background-c);
+                                }
+                            }
+                        }
+
+                        &:nth-child(even) {
+                            .card {
+                                &:after {
+                                    border-right-color: var(--primary-inverse-background-c);
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                &:after {
+                    background-color: var(--primary-inverse-background-a);
+                }
+            }
+            //--  timeline --// 
+        }
+    }
+}
+//** -- feed -- **//
+
+//** -- form -- **//
+.widget-form {
+    &.primary-inverse {
+        background-color: var(--primary-inverse-background-b);
+    }
+}
+//** -- form -- **//
+
+//** -- footer -- **//
+.widget-footer {
+    &.primary-inverse {
+        .hold {
+			background: var(--primary-inverse-background-a) !important;
+		}
+        
+        .box-logo {
+            svg {
+                fill: var(--primary-inverse-foreground-d);
+            }
+        }
+        
+        //-- menu colors --//
+        .hold-menu {
+            [class^="menu-"] {
+                ul {
+                    li {
+                        &, a {
+                            color: var(--primary-inverse-link-d);
+                        }
+                    }
+                }
+            }
+        }
+        
+        .hold-footer {
+            .menu-institutional {
+                ul {
+                    li {
+                        &, a {
+                            color: var(--primary-inverse-link-e);
+                        }
+                    }
+                }
+            }
+        }
+        //-- menu colors --//
+        
+        //-- separator --//
+        // hold footer //
+        .hold-footer {
+            .menu-institutional {
+                &.separator-default {
+                    ul {
+                        > li {
+                            &+li:not(.credit) {
+                                &:before {
+                                    background-color: var(--primary-inverse-link-e);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // hold footer //
+    
+        // hold menu //
+        &.horizontal,
+        &.vertical {
+            .hold-menu {
+                [class^="menu-"] {
+                    &.separator-default {
+                        ul {
+                            > li {
+                                &:before {
+                                    background-color: var(--primary-inverse-border-a);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // hold menu //
+        //-- separator --//
+    }
+}
+//** -- footer -- **//
+
+//** -- gallery -- **//
+.widget-gallery {
+    &.primary-inverse {
+        .hold-gallery {
+            .item {
+                &.default {
+                    img {
+                        @include border-box(var(--primary-inverse-shadow-a));
+                    }
+                }
+            }
+        } 
+    }
+}
+//** -- gallery -- **//
+
+//** -- slideshow -- **//
+.widget-slideshow {
+    &.primary-inverse {
+        .item {
+            .box-image,
+            .box-video {
+                background-color: var(--primary-inverse-background-b);
+            }
+        }
+        
+        .flickity-prev-next-button {
+            .arrow {
+                fill: var(--primary-inverse-link-c);
+            }
+        }
+    }
+}
+//** -- slideshow -- **//
+//--// Widgets End //--//
+
+//--// Components Start //--//
+//** -- announcement bar -- ** //
+.announcement-bar {
+    &.primary-inverse {
+        background: var(--primary-inverse-background-a);
+        
+        [class^="text-"] {
+            &, a {
+                color: var(--primary-inverse-foreground-a);
+            }
+        }
+        
+        ::selection {
+            color: var(--primary-inverse-background-a);
+            background-color: var(--primary-inverse-foreground-a);
+        }
+
+        ::-moz-selection {
+            color: var(--primary-inverse-background-a);
+            background-color: var(--primary-inverse-foreground-a);
+        }
+    }
+}
+//** -- announcement bar -- ** //
+
+//** -- accordion -- **//
+[class^="widget-"] {
+    &.primary-inverse {
+        .item-accordion {
+            .title-accordion {
+                color: var(--primary-inverse-link-b);
+                background: var(--primary-inverse-link-a);
+
+                .button-accordion {
+                    color: var(--primary-inverse-link-b);
+                }
+            }
+
+            .content-accordion {
+                .hold-accordion {
+                    background: var(--primary-inverse-background-c);
+                    
+                    .box-text {
+                        &, p {
+                            color: var(--primary-inverse-foreground-e);
+                        }
+                        
+                        p {
+                            a:not(.button) {
+                                color: var(--primary-inverse-link-f);
+                            }
+                        }
+                    }
+
+                    .box-icon {
+                        color: var(--primary-inverse-foreground-f);
+                        background: var(--primary-inverse-background-d); 
+                    }
+                }
+            }
+        }
+    }
+}
+//** -- accordion -- **//
+
+//** -- button -- **//
+[class^="header"],
+[class^="widget-"],
+.announcement-bar {
+    &.primary-inverse {
+        .button {
+            &.default {
+                color: var(--primary-inverse-link-c);
+                background-color: var(--primary-inverse-link-a);
+                
+                //@include border-box(var(--primary-inverse-shadow-a));
+            }
+            
+            &.line {
+                color: var(--primary-inverse-link-c);
+                border-color: var(--primary-inverse-link-c);
+                
+                //@include border-box(var(--primary-inverse-shadow-a));
+            }
+            
+            &.clean {
+                color: var(--primary-inverse-link-c);
+            }
+            
+            &.title {
+                color: var(--primary-inverse-foreground-c);
+            }
+        }
+    }
+}
+//** -- button -- **//
+
+//** -- card --**//
+[class^="widget-"] {
+    &.primary-inverse {
+        .card {
+            &.default {
+                .hold-card {
+                    background: var(--primary-inverse-background-c); 
+                    @include border-box(var(--primary-inverse-shadow-a));
+                }
+                
+                .box-text {
+                    &, p {
+                        color: var(--primary-inverse-foreground-e);
+                    }
+                    
+                    p {
+                        a:not(.button) {
+                            color: var(--primary-inverse-link-f);
+                        }
+                    }
+                    
+                    .box-headline {
+                        [class^="h"] {
+                            color: var(--primary-inverse-foreground-a);
+                        }
+                    }
+                    
+                    .box-info {
+                        border-top-color: var(--primary-inverse-border-b);
+                    }
+                }
+
+                .box-image,
+                .box-icon {
+                    &, a {
+                        color: var(--primary-inverse-foreground-f);
+                    }
+
+                    background: var(--primary-inverse-background-d);
+                }
+            }
+
+            &.line {
+                .hold-card {
+                    border-color: var(--primary-inverse-foreground-a);
+                    @include border-box(var(--primary-inverse-shadow-a));
+                }
+                
+                .box-text {
+                    &, p, a:not(.button) {
+                        color: var(--primary-inverse-foreground-a);
+                    }
+                    
+                    .box-headline {
+                        [class^="h"] {
+                            color: var(--primary-inverse-foreground-a);
+                        }
+                    }
+                    
+                    .box-info {
+                        border-top-color: var(--primary-inverse-foreground-a);
+                    }
+                }
+
+                .box-image,
+                .box-icon {
+                    &, a {
+                        color: var(--primary-inverse-foreground-a);
+                    }
+
+                    border-color: var(--primary-inverse-foreground-a);
+                }
+            }
+            
+            &.transparent,
+            &.clean {
+                .box-text {
+                    &, p, a:not(.button) {
+                        color: var(--primary-inverse-foreground-a);
+                    }
+                    
+                    .box-headline {
+                        [class^="h"] {
+                            color: var(--primary-inverse-foreground-a);
+                        }
+                    }
+                    
+                    .box-info {
+                        border-top-color: var(--primary-inverse-foreground-a);
+                    }
+                }
+            }
+            
+            &.transparent {
+                .box-image,
+                .box-icon {
+                    &, a {
+                        color: var(--primary-inverse-foreground-f);
+                    }
+
+                    background-color: var(--primary-inverse-background-d);
+                    @include border-box(var(--primary-inverse-shadow-a));
+                }
+            }
+            
+            &.clean {
+                .box-image,
+                .box-icon {
+                    &, a {
+                        color: var(--primary-inverse-foreground-a);
+                    }
+                }
+            }
+        }
+    }
+}
+//** -- card --**//
+
+//** -- search -- **//
+[class^="widget-"] {
+    &.primary-inverse {
+        .search-form {
+            border-color: var(--primary-inverse-foreground-a);
+            @include border-box(var(--primary-inverse-shadow-a));
+
+            ::placeholder {
+              color: var(--primary-inverse-foreground-a);
+            }
+
+            :-ms-input-placeholder {
+              color: var(--primary-inverse-foreground-a);
+            }
+
+            ::-ms-input-placeholder {
+              color: var(--primary-inverse-foreground-a);
+            }
+
+            .field,
+            .submit {
+                color: var(--primary-inverse-foreground-a);
+            }
+
+            .submit {
+                border-color: var(--primary-inverse-foreground-a);
+            }
+        }
+    }
+}
+//** -- search -- **//
+
+//** -- sidebar -- ** //
+[class^="widget-"] {
+    &.primary-inverse {
+        .item-sidebar {
+			border: none;
+			
+            &:not(.clean) {
+                //border-color: var(--primary-inverse-foreground-a);
+                //@include border-box(var(--primary-inverse-shadow-a));
+            }
+            
+            .title-sidebar {
+                //border-bottom-color: var(--primary-inverse-foreground-a);
+				border-bottom: none;
+            } 
+			
+			.content-sidebar {
+				padding: 0 $button-padding;
+				color: var(--primary-inverse-link-f);
+				p, a {
+					color: var(--primary-inverse-link-f);
+				}
+			}
+
+            .list-sidebar {
+                li {
+                    &+li {
+                        border-top-color: var(--primary-inverse-foreground-a);
+                    }
+                }
+            }
+        }
+    }
+}
+//** -- sidebar -- ** //
+//--// Components End //--//
+
+
+//--// Contact Form 7 //--//
+#contact-form {
+	&.primary-inverse {
+		.form-area input,
+		.form-area select,
+		.form-text textarea,
+		.form-quiz input {
+			border-color: var(--primary-inverse-foreground-a);
+			background-color: transparent;
+			@include border-box(var(--primary-inverse-shadow-a));
+		}
+	}
+}
+
+.widget-form {
+	&.primary-inverse {
+		.hold {
+			.box-headline{
+				margin-bottom: calc(#{$margin-size-v} * 1.5);
+			}
+
+			.box-layout {
+				.form-button {
+					.wpcf7-submit {
+						color: var(--primary-inverse-link-c)!important;
+						background-color: var(--primary-inverse-link-a)!important;
+					}
+				}
+			}
+		}
+	}
+}
+//--// Contact Form 7 //--//
+
+
+//--// Shop //--//
+.header {
+    // absolute //
+    &#header-absolute,
+    &#header-relative {
+        &.primary-inverse {
+            .css-ooolli-counterCSS-customCounterCSS-CartCounter {
+                color: var(--primary-inverse-foreground-d);
+                background-color: var(--primary-inverse-link-a);
+            }
+            
+            .css-1fwczv2-IconCSS-svgCSS-CartIcon {
+                &,
+                .css-12z200q-pathCSS {
+                    color: var(--primary-inverse-foreground-d);
+                    fill: var(--primary-inverse-foreground-d);
+                }
+            }
+        }
+    }
+}
+//--// Shop //--//

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkshopwp=self.webpackChunkshopwp||[]).push([["CollectionDescription-public"],{TPzG:function(e,t,n){n.r(t);var c=n("udXY"),i=n("E5I5");t.default=function(e){var t=e.dropzone,n=e.description;return(0,c.vI)(React.createElement("div",{itemProp:"description",className:"wps-collections-description",dangerouslySetInnerHTML:{__html:n}}),(0,i.tu)(t))}}}]);

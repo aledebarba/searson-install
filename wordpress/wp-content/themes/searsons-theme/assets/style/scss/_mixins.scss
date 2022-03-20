@@ -1,0 +1,219 @@
+//** -- mixins -- **//
+//-- responsive --//
+@mixin for-phone-only {
+	@media only screen and (max-device-width: 599px) {
+		@content;
+	}
+}
+
+@mixin for-tablet-portrait-only {
+	@media only screen and (min-device-width: 600px) and (max-device-width:1024px) and (orientation:portrait) {
+		@content;
+	}
+}
+
+@mixin for-tablet-landscape-only {
+	@media only screen and (min-device-width: 900px) and (max-device-width:1199px) and (orientation:landscape) {
+		@content;
+	}
+}
+
+@mixin for-tablet-up {
+	@media only screen and (min-device-width: 600px) {
+		@content;
+	}
+}
+
+@mixin for-desktop-down {
+	@media only screen and (max-device-width: 1199px) {
+		@content;
+	}
+}
+
+@mixin for-desktop-up {
+	@media only screen and (min-device-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin for-big-desktop-up {
+	@media only screen and (min-device-width: 1800px) {
+		@content;
+	}
+}
+//-- responsive --//
+
+//-- color --//
+// https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
+
+@mixin hsla-alpha($property, $color-variable, $opacity) {
+    $color-variable-h: var(#{$color-variable+'-h'});
+    $color-variable-s: var(#{$color-variable+'-s'});
+    $color-variable-l: var(#{$color-variable+'-l'});
+    
+    #{$property}: hsla($color-variable-h, $color-variable-s, $color-variable-l, $opacity);
+}
+
+@mixin hsla-hue($property, $color-variable, $value, $opacity) {
+    //$color-variable-h: var(#{$color-variable+'-h'});
+    $color-variable-s: var(#{$color-variable+'-s'});
+    $color-variable-l: var(#{$color-variable+'-l'});
+    
+    #{$property}: hsla($value, $color-variable-s, $color-variable-l, $opacity);
+}
+
+@mixin hsla-saturation($property, $color-variable, $value, $opacity) {
+    $color-variable-h: var(#{$color-variable+'-h'});
+    //$color-variable-s: var(#{$color-variable+'-s'});
+    $color-variable-l: var(#{$color-variable+'-l'});
+    
+    #{$property}: hsla($color-variable-h, $value, $color-variable-l, $opacity);
+}
+
+@mixin hsla-lightness($property, $color-variable, $value, $opacity) {
+    $color-variable-h: var(#{$color-variable+'-h'});
+    $color-variable-s: var(#{$color-variable+'-s'});
+    //$color-variable-l: var(#{$color-variable+'-l'});
+    
+    #{$property}: hsla($color-variable-h, $color-variable-s, $value, $opacity);
+}
+//-- color --//
+
+//-- mixin css3 prefix --//
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+//-- mixin css3 prefix --//
+
+//-- background --//
+@mixin background-blend-mode($property) {
+    @include css3-prefix('background-blend-mode', $property);
+}
+
+@mixin background-size($property) {
+    @include css3-prefix('background-size', $property);
+}
+//-- background --//
+
+//-- transform --//
+@mixin transform($property) {
+	@include css3-prefix('transform', $property);
+}
+
+@mixin transform-origin($property) {
+	@include css3-prefix('transform-origin', $property);
+}
+
+@mixin transform-style($property) {
+	@include css3-prefix('transform-style', $property);
+}
+//-- transform --//
+
+//-- flex --//
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexinline() {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: inline-flex;
+}
+
+@mixin flex($property) {
+	@include css3-prefix('flex', $property);
+}
+
+@mixin align-items($property) {
+	@include css3-prefix('align-items', $property);
+}
+
+@mixin align-content($property) {
+	@include css3-prefix('align-content', $property);
+}
+
+@mixin align-self($property) {
+	@include css3-prefix('align-self', $property);
+}
+
+@mixin flex-basis($property) {
+	@include css3-prefix('flex-basis', $property);
+}
+
+@mixin flex-direction($property) {
+	@include css3-prefix('flex-direction', $property);
+}
+
+@mixin flex-grow($property) {
+	@include css3-prefix('flex-grow', $property);
+}
+
+@mixin flex-shrink($property) {
+	@include css3-prefix('flex-shrink', $property);
+}
+
+@mixin flex-wrap($property) {
+	@include css3-prefix('flex-wrap', $property);
+}
+
+@mixin gap($property) {
+	@include css3-prefix('gap', $property);
+}
+
+@mixin justify-content($property) {
+	@include css3-prefix('justify-content', $property);
+}
+
+@mixin order($property) {
+	@include css3-prefix('order', $property);
+}
+//-- flex --//
+
+//-- text-decoration --//
+@mixin text-decoration-color($property) {
+    @include css3-prefix('text-decoration-color', $property);
+}
+
+@mixin text-decoration-style($property) {
+    @include css3-prefix('text-decoration-style', $property);
+}
+
+@mixin text-decoration-line($property) {
+    @include css3-prefix('text-decoration-line', $property);
+}
+
+@mixin text-underline-position($property) {
+    @include css3-prefix('text-underline-position', $property);
+}
+//-- text-decoration --//
+
+//--  filter --//
+@mixin filter($property) {
+	@include css3-prefix('filter', $property);
+}
+//--  filter --//
+
+//-- clip path, mask --//
+@mixin mix-blend-mode($property) {
+    @include css3-prefix('mix-blend-mode', $property);
+}
+
+@mixin clip-path($property) {
+	@include css3-prefix('clip-path', $property);
+}
+
+@mixin mask($property) {
+	@include css3-prefix('mask', $property);
+}
+
+@mixin mask-size($property) {
+	@include css3-prefix('mask-size', $property);
+}
+//-- clip path, mask --
+//** -- mixins -- **//

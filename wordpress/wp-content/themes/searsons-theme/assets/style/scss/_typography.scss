@@ -1,0 +1,146 @@
+//** -- typography base -- **//
+body {
+    font-size: calc((13px + (20 - 13) * ((100vw - 300px) / (1800 - 300))));
+	// font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+    
+    font-weight: $font-weight-regular;
+	line-height: 1;
+	text-align: left;
+}
+
+strong {
+    font-weight: $font-weight-bold;
+}
+
+p,
+li {
+    font-size: calc(#{$font-size-regular} * 1.2);
+    font-weight: $font-weight-regular;
+	line-height: 1.75;
+    
+    @include for-phone-only {
+        font-size: calc(#{$font-size-mobile} * 1.05);
+	}
+    
+    strong {
+        font-weight: $font-weight-bold;
+    }
+}
+
+p {
+    a {
+        @include text-link();
+    }
+    
+    &+p {
+		margin-top: $space-regular;
+        
+        @include for-phone-only {
+            margin-top: $space-mobile;
+        }
+	}
+}
+
+//** -- typography base -- **//
+
+//** -- headlines -- **//
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    &.font-primary {
+        font-family: $font-primary;
+    }
+    
+    &.font-secondary {
+        font-family: $font-secondary;
+    }
+    
+    &.font-extra {
+        font-family: $font-extra;
+    }
+    
+    &.font-weight-regular {
+        font-weight: $font-weight-regular;
+    }
+    
+    &.font-weight-medium {
+        font-weight: $font-weight-medium;
+    }
+    
+    &.font-weight-bold {
+        font-weight: $font-weight-bold;
+    }
+    
+    &.text-default {
+        
+    }
+    
+    &.text-transform {
+        @include text-transform();
+    }
+    
+    a {
+        @include text-link();
+    }
+}
+
+.h1, h1 {
+	font-size: $font-size-xx-large;
+	line-height: $line-height-small;
+    
+    @include for-phone-only {
+		font-size: $font-size-mobile-xx-large;
+	}
+}
+
+.h2, h2 {
+	font-size: $font-size-x-large;
+	line-height: $line-height-small;
+	
+	@include for-phone-only {
+		font-size: $font-size-mobile-x-large;
+	}
+}
+
+.h3, h3 {
+	font-size: $font-size-large;
+	line-height: 1.4;
+	
+	@include for-phone-only {
+		font-size: $font-size-mobile-large;
+	}
+}
+
+.h4, h4 {
+    font-size: calc(#{$font-size-regular} * 1.5);
+	line-height: 1.25;
+	//line-height: $line-height-regular;
+    
+	@include for-phone-only {
+		font-size: calc(#{$font-size-mobile} * 1.25);
+	}
+}
+
+.h5, h5 {
+    font-size: calc(#{$font-size-regular} * 1.15);
+	line-height: 1.25;
+	//line-height: $line-height-regular;
+    
+    @include for-phone-only {
+		font-size: calc(#{$font-size-mobile} * 1.05);
+	}
+}
+
+.h6, h6 {
+    font-size: $font-size-regular;
+	line-height: 1.25;
+	//line-height: $line-height-regular;
+    
+    @include for-phone-only {
+		font-size: $font-size-mobile;
+	}
+}
+//** -- headlines -- **//

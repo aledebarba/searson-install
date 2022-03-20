@@ -1,0 +1,239 @@
+//--// Contact Form 7 //--//
+#contactform7 {
+	position:relative;
+	
+	.form-area,
+    .form-quiz .wpcf7-form-control-wrap {}
+	
+	.form-area,
+	.form-text,
+	.form-quiz .wpcf7-form-control-wrap {}
+
+	.form-title,
+	.wpcf7-quiz-label {
+        @include flexinline();
+        @include align-items(center);
+		width: 25%;
+		height: calc(#{$button-size} * .875);
+		font-family: $font-primary; 
+		font-size: calc(#{$font-size-large} * .7);
+	}
+
+	.form-area,
+	.form-text,
+	.form-quiz {
+		position: relative;
+		width: 100%;
+		margin-bottom: $space-x-small;
+	}
+	
+	.form-area,
+    .form-text {
+		@include flexbox();
+		@include align-items(flex-start);
+		@include flex-wrap(wrap);
+	}
+	
+	.form-area .wpcf7-form-control-wrap,
+	.form-text .wpcf7-form-control-wrap {
+		width: 75%;
+	}
+	
+	.form-area input,
+	.form-area select,
+	.form-text textarea,
+	.form-quiz input {
+		width:  100%;
+		margin: 0;
+        padding: 0 $button-padding;
+		
+        font-size: calc(#{$button-font-size} * 1.4);
+		
+      
+        border-width: $button-border-size;
+        border-style: solid;
+		border-radius: $border-radius-button;
+	}
+    
+	.form-area input,
+	.form-area select,
+	.form-quiz input {
+		height: $button-size;
+	}
+
+	.form-text {
+		.wpcf7-form-control-wrap {
+			//width: 100%;
+		}
+		
+		.form-title {
+		}
+		
+		textarea {
+			resize: none;
+			//width: 100%;
+			height: calc(#{$button-size} * 5);
+			padding: $space-x-small;
+		}
+	}
+
+	.form-quiz input {
+		width: 40%;
+	}
+
+	.form-button {
+		text-align: right;
+		
+        input {
+			cursor: pointer;
+            overflow: hidden;
+            position: relative;
+
+            @include flexinline();
+            @include align-items(center);
+            @include justify-content(center);
+
+            height: $button-size;
+            min-width: $button-size;
+            margin: 0;
+            padding-right: $button-padding;
+            padding-left: $button-padding;
+
+            border-width: $button-border-size;
+            border-style: solid;
+            border-color: transparent;
+			border-radius: $border-radius-button;
+            
+			font-size: calc(#{$font-size-large} *.6);
+            line-height: 1;
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+
+            @include for-phone-only {
+                min-height: $button-size-mobile;
+
+                padding-right: $button-padding-mobile;
+                padding-left: $button-padding-mobile;
+
+                font-size: $button-font-size-mobile;
+            }
+		}
+	}
+
+	.notice {
+		position: relative;
+		margin-top: $space-x-small;
+		
+		.text {
+			font-size: $font-size-x-small;
+			line-height: $line-height-regular;
+		}
+	}
+
+	input[type=text]:focus,
+	input[type=email]:focus,
+	textarea:focus {
+		//border-color: $color-content-shade;
+	}
+	
+	input[type=text],
+	input[type=email],
+	input[type=submit],
+	textarea {
+		//outline: none;
+	}
+	
+	br {
+		display: none;
+	}
+}
+
+.wpcf7 {
+    .screen-reader-response {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        width: 1px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    form .wpcf7-response-output {
+		margin-top: $space-large;
+		padding: $space-small;
+		color: white;
+    }
+
+    form.init .wpcf7-response-output {
+        display: none;
+    }
+
+    form.sent .wpcf7-response-output {
+        background-color: var(--color-success);
+    }
+
+	form.invalid .wpcf7-response-output,
+	form.unaccepted .wpcf7-response-output,
+    form.failed .wpcf7-response-output,
+    form.aborted .wpcf7-response-output {
+         background-color: var(--color-danger);
+    }
+
+    form.spam .wpcf7-response-output {
+        background-color: var(--color-warning);
+    }
+
+    form.invalid .wpcf7-response-output,
+    form.unaccepted .wpcf7-response-output {
+        background-color: var(--color-invalid);
+    }
+
+    .wpcf7-not-valid-tip {
+        display: block;
+        margin-top: $space-xx-small;
+        padding: 0;
+        font-weight: $font-weight-medium;
+        color: var(--color-danger);
+    }
+
+    .wpcf7-list-item {
+        display: inline-block;
+        margin: 0 0 0 1em;
+    }
+
+    .wpcf7-display-none {
+        display: none;
+        }
+
+    img.ajax-loader {
+        display: none;
+
+        /*
+        visibility: hidden;
+        display: inline-block;
+        background-image: url('../../assets/ajax-loader.gif');
+        width: 16px;
+        height: 16px;
+        border: none;
+        padding: 0;
+        margin: 0 0 0 4px;
+        vertical-align: middle;
+        */
+    }
+
+    img.ajax-loader.is-active {
+        visibility: visible;
+    }
+
+    .ajax-error {
+        display: none;
+    }
+
+    .placeheld {
+        color: #888;
+    }
+}
+//--// Contact Form 7 //--//

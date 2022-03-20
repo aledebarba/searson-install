@@ -1,0 +1,32 @@
+{
+  "name": "searsons_theme",
+  "version": "1.0.0",
+  "description": "wordpress theme",
+  "main": "./modules/guts/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getuserto/2021-searson-theme.git"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "gulp"
+  ],
+  "author": "ale@alemacedo.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getuserto/2021-searson-theme/issues"
+  },
+  "homepage": "https://github.com/getuserto/2021-searson-theme#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.8"
+  }
+}

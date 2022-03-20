@@ -1,0 +1,496 @@
+//** -- colors -- **//
+:root { 
+    //-- editable --//
+    // light - background //
+    --color-base: hsl(0, 0%, 97%);
+    --color-base-light: hsla(0, 0%, 97%, .9);
+    // light - background //
+    
+    // dark - foreground //
+    --color-content: hsl(0, 0%, 11%);
+    --color-content-light: hsl(0, 0%, 17%);
+	--color-content-lighter: hsl(0, 0%, 40%);
+	--color-content-shadow: hsla(0, 0%, 11%, .25);
+    // dark - foreground //
+
+    // brand - red //
+    --color-brand: hsl(341, 99%, 29%);
+	--color-brand-light: hsl(341, 98%, 38%);
+    // brand - red //
+
+    // brand-secondary - green //
+    --color-brand-secondary: hsl(61, 81%, 18%);
+	--color-brand-secondary-light: hsl(61, 52%, 44%);
+    // brand-secondary - green //
+    
+    //-- editable --//
+    
+    //-- not editable --//
+    // modal //
+    --color-modal-foreground: rgb(200, 200, 200);
+    --color-modal-foreground-opacity: rgba(200, 200, 200, .9);
+    --color-modal-background: rgba(30, 30, 30, .9);
+    // modal //
+
+    // interaction //
+    --color-info: rgb(0, 82, 204); // blue
+    --color-invalid: rgb(255, 204, 0); // yellow
+    --color-warning: rgb(255, 139, 0); // orange
+    --color-danger: rgb(207, 61, 59); // red
+    --color-success: rgb(0, 135, 90); // green
+    // interaction //
+    
+    // brands //
+    --brand-apple-music: rgb(252, 60, 68);
+    --brand-deezer: rgb(255,0,146);
+    --brand-facebook: rgb(66,103,178);
+    --brand-google: rgb(66,133,244);
+    --brand-instagram-01: rgb(84,89,210);
+    --brand-instagram-02: rgba(214,45,128,1);
+    --brand-linkedin: rgb(0,97,146);
+    --brand-spotify: rgb(30,215,96);
+    --brand-twitter: rgb(56,161,243);
+    --brand-whatsapp: rgb(37,211,102);
+    --brand-youtube: rgb(255,0,0);
+    // brands //
+    //-- not editable --//
+}
+
+//-- schemes --//
+// primary //
+:root {
+    --primary-foreground-a: var(--color-content); // paragraph, button title, card line, card clean
+    --primary-foreground-b: var(--color-content); // headline 01, headline 02, headline 03
+    --primary-foreground-c: var(--color-content); // headline 04, headline 05, headline 06 (article, card, accordion), notice
+    --primary-foreground-d: var(--color-content); // logo fill, hamburger
+    --primary-foreground-e: var(--color-content); // accordion foreground, card foreground
+    --primary-foreground-f: var(--color-content); // icon foreground
+    
+    --primary-link-a: var(--color-brand-light); // button background, button line, button clean, submenu separator, slideshow arrow, carousel arrow, accordion button background
+    --primary-link-b: var(--color-base); // button foreground, submenu foreground, submenu background, accordion foreground 
+    --primary-link-c: var(--color-content); // menu pre header, menu header main
+    --primary-link-d: var(--color-content); // menu footer main, menu footer extra
+    --primary-link-e: var(--color-content); // menu institutional, menu institutional separator
+    --primary-link-f: var(--color-brand); // article paragraph link, list paragraph link, accordion paragraph link
+	--primary-link-g: var(--color-content-lighter); //sidebar content
+    
+    --primary-border-a: var(--color-brand); // menu header main separator, menu footer main separator
+    --primary-border-b: var(--color-brand); // menu pre header separator, card box separator
+    
+    --primary-shadow-a: var(--color-content-shadow); // box shadow
+    
+    --primary-background-a: var(--color-base); // widget background
+    --primary-background-b: var(--color-base); // widget image blend background
+    --primary-background-c: var(--color-base-light); // accordion background, card background
+    --primary-background-d: var(--color-base); // icon background
+}
+// primary //
+
+// primary-inverse //
+:root {
+    --primary-inverse-foreground-a: var(--color-base); // paragraph, button title, card line, card clean
+    --primary-inverse-foreground-b: var(--color-base); // headline 01, headline 02, headline 03
+    --primary-inverse-foreground-c: var(--color-base); // headline 04, headline 05, headline 06 (article, card, accordion), notice
+    --primary-inverse-foreground-d: var(--color-base); // logo fill, hamburger
+    --primary-inverse-foreground-e: var(--color-base); // accordion foreground, card foreground
+    --primary-inverse-foreground-f: var(--color-content); // icon foreground
+    
+    --primary-inverse-link-a: var(--color-brand-light); // button background, button line, button clean, slideshow arrow, carousel arrow, accordion button background
+    --primary-inverse-link-b: var(--color-content); // submenu foreground, submenu separator, accordion foreground, menu header main
+    --primary-inverse-link-c: var(--color-base); // button foreground, menu pre header, submenu background
+    --primary-inverse-link-d: var(--color-base); // menu footer main, menu footer extra
+    --primary-inverse-link-e: var(--color-base); // menu institutional, menu institutional separator
+    --primary-inverse-link-f: var(--color-base); // article paragraph link, list paragraph link, accordion paragraph link
+    
+    --primary-inverse-border-a: var(--color-brand); // menu header main separator, menu footer main separator
+    --primary-inverse-border-b: var(--color-base); // menu pre header separator, card box separator
+    
+    --primary-inverse-shadow-a: var(--color-content-shadow); // box shadow
+    
+    --primary-inverse-background-a: var(--color-content); // widget background
+    --primary-inverse-background-b: var(--color-content-light); // widget image blend background
+    --primary-inverse-background-c: var(--color-brand); // accordion background, card background, icon background
+    --primary-inverse-background-d: var(--color-base); // box background
+	--primary-inverse-background-e: var(--color-content); //timeline separator
+}
+// primary-inverse //
+
+// secondary //
+:root {
+    --secondary-foreground-a: var(--color-brand); // paragraph, button title, card line, card clean
+    --secondary-foreground-b: var(--color-brand); // headline 01, headline 02, headline 03
+    --secondary-foreground-c: var(--color-brand); // headline 04, headline 05, headline 06 (article, card, accordion), notice
+    --secondary-foreground-d: var(--color-content); // logo fill, hamburger
+    --secondary-foreground-e: var(--color-base); // accordion foreground, card foreground
+    --secondary-foreground-f: var(--color-base); // icon foreground
+    
+    --secondary-link-a: var(--color-brand-light); // button background, button line, button clean, menu header main, slideshow arrow, carousel arrow, submenu foreground
+    --secondary-link-b: var(--color-base); // button foreground, submenu separator, accordion foreground, submenu background
+    --secondary-link-c: var(--color-brand); // menu pre header
+    --secondary-link-d: var(--color-brand); // menu footer main, menu footer extra, accordion button background
+    --secondary-link-e: var(--color-brand); // menu institutional, menu institutional separator
+    --secondary-link-f: var(--color-content); // article paragraph link, list paragraph link, accordion paragraph link
+    
+    --secondary-border-a: var(--color-content); // menu header main separator, menu footer main separator
+    --secondary-border-b: var(--color-content); // menu pre header separator, card box separator
+    
+    --secondary-shadow-a: var(--color-content-shadow); // box shadow
+    
+    --secondary-background-a: var(--color-base); // widget background
+    --secondary-background-b: var(--color-base); // widget image blend background
+    --secondary-background-c: var(--color-brand); // card background
+    --secondary-background-d: var(--color-brand); // icon background, accordion background
+}
+// secondary //
+
+// secondary inverse //
+:root {
+    --secondary-inverse-foreground-a: var(--color-base); // paragraph, button title, card line, card clean
+    --secondary-inverse-foreground-b: var(--color-base); // headline 01, headline 02, headline 03
+    --secondary-inverse-foreground-c: var(--color-base); // headline 04, headline 05, headline 06 (article, card, accordion), notice
+    --secondary-inverse-foreground-d: var(--color-base); // logo fill, hamburger
+    --secondary-inverse-foreground-e: var(--color-content); // accordion foreground, card foreground
+    --secondary-inverse-foreground-f: var(--color-base); // icon foreground
+    
+    --secondary-inverse-link-a: var(--color-base); // button background, button line, button clean, menu header main, submenu background, slideshow arrow, carousel arrow
+    --secondary-inverse-link-b: var(--color-brand); // button foreground, submenu foreground, submenu separator, accordion foreground 
+    --secondary-inverse-link-c: var(--color-base); // menu pre header
+    --secondary-inverse-link-d: var(--color-base); // menu footer main, menu footer extra
+    --secondary-inverse-link-e: var(--color-base); // menu institutional, menu institutional separator
+    --secondary-inverse-link-f: var(--color-base); // article paragraph link, list paragraph link, accordion paragraph link
+	--secondary-inverse-link-g: var(--color-brand-light); //accordion button background
+    
+    --secondary-inverse-border-a: var(--color-brand); // menu header main separator, menu footer main separator
+    --secondary-inverse-border-b: var(--color-brand); // menu pre header separator, card box separator
+    
+    --secondary-inverse-shadow-a: var(--color-content-shadow); // box shadow
+    
+    --secondary-inverse-background-a: var(--color-brand); // widget background
+    --secondary-inverse-background-b: var(--color-brand); // widget image blend background
+    --secondary-inverse-background-c: var(--color-content); // accordion background, card background
+    --secondary-inverse-background-d: var(--color-base); // icon background
+	--secondary-inverse-background-e: var(--color-content-light); //accordion content background
+}
+// secondary inverse //
+
+// extra //
+:root {
+    --extra-foreground-a: var(--color-content); // paragraph, button title, card line, card clean
+    --extra-foreground-b: var(--color-content); // headline 01, headline 02, headline 03
+    --extra-foreground-c: var(--color-content); // headline 04, headline 05, headline 06 (article, card, accordion), notice
+    --extra-foreground-d: var(--color-content); // logo fill, hamburger
+    --extra-foreground-e: var(--color-base); // accordion foreground, card foreground
+    --extra-foreground-f: var(--color-brand-secondary); // icon foreground
+    
+    --extra-link-a: var(--color-brand-secondary); // button background, button line, button clean, menu header main, submenu background, slideshow arrow, carousel arrow, accordion button background
+    --extra-link-b: var(--color-base); // button foreground, submenu foreground, submenu separator, accordion foreground 
+    --extra-link-c: var(--color-content); // menu pre header
+    --extra-link-d: var(--color-content); // menu footer main, menu footer extra
+    --extra-link-e: var(--color-content); // menu institutional, menu institutional separator
+    --extra-link-f: var(--color-brand-secondary); // article paragraph link, list paragraph link, accordion paragraph link
+    
+    --extra-border-a: var(--color-content); // menu header main separator, menu footer main separator
+    --extra-border-b: var(--color-base); // menu pre header separator, card box separator
+    
+    --extra-shadow-a: var(--color-content-shadow); // box shadow
+    
+    --extra-background-a: var(--color-base); // widget background
+    --extra-background-b: var(--color-base); // widget image blend background
+    --extra-background-c: var(--color-brand-secondary); // accordion background, card background
+    --extra-background-d: var(--color-base); // icon background
+}
+// extra //
+
+// extra inverse //
+:root {
+    --extra-inverse-foreground-a: var(--color-base); // paragraph, button title, card line, card clean
+    --extra-inverse-foreground-b: var(--color-base); // headline 01, headline 02, headline 03
+    --extra-inverse-foreground-c: var(--color-base); // headline 04, headline 05, headline 06 (article, card, accordion), notice
+    --extra-inverse-foreground-d: var(--color-base); // logo fill, hamburger
+    --extra-inverse-foreground-e: var(--color-brand-secondary); // accordion foreground, card foreground
+    --extra-inverse-foreground-f: var(--color-brand-secondary); // icon foreground
+    
+    --extra-inverse-link-a: var(--color-brand-secondary-light); // button background, button line, button clean, menu header main, submenu background, slideshow arrow, carousel arrow, accordion button background
+    --extra-inverse-link-b: var(--color-base); // button foreground, submenu foreground, submenu separator, accordion foreground 
+    --extra-inverse-link-c: var(--color-base); // menu pre header
+    --extra-inverse-link-d: var(--color-base); // menu footer main, menu footer extra
+    --extra-inverse-link-e: var(--color-base); // menu institutional, menu institutional separator
+    --extra-inverse-link-f: var(--color-base); // article paragraph link, list paragraph link, accordion paragraph link
+	--extra-inverse-link-g: var(--color-content); //sub menu foreground
+    
+    --extra-inverse-border-a: var(--color-base); // menu header main separator, menu footer main separator
+    --extra-inverse-border-b: var(--color-brand-secondary); // menu pre header separator, card box separator
+    
+    --extra-inverse-shadow-a: var(--color-content-shadow); // box shadow
+    
+    --extra-inverse-background-a: var(--color-brand-secondary); // widget background
+    --extra-inverse-background-b: var(--color-brand-secondary); // widget image blend background
+    --extra-inverse-background-c: var(--color-base); // accordion background, card background
+    --extra-inverse-background-d: var(--color-base); // icon background
+}
+// extra inverse //
+//** -- colors -- **//
+
+//** -- typography -- **//
+@import url("https://use.typekit.net/sna3zwa.css");
+
+$font-primary: brandon-grotesque, sans-serif;
+$font-secondary: cardo, serif;
+$font-extra: nunito-sans, sans-serif;
+
+$font-weight-regular: 400; // 400
+$font-weight-medium: 500; // 500
+$font-weight-bold: 700; // 700
+
+$font-size-regular: 1em;
+$font-size-xx-small: calc(#{$font-size-regular} * .7);
+$font-size-x-small: calc(#{$font-size-regular} * .8);
+$font-size-small: calc(#{$font-size-regular} * .9);
+$font-size-large: calc(#{$font-size-regular} * 1.9);
+$font-size-x-large: calc(#{$font-size-regular} * 2.8);
+$font-size-xx-large: calc(#{$font-size-regular} * 4.2);
+
+$font-size-mobile: 1.15em;
+$font-size-mobile-xx-small: calc(#{$font-size-mobile} * .8);
+$font-size-mobile-x-small: calc(#{$font-size-mobile} * .8);
+$font-size-mobile-small: calc(#{$font-size-mobile} * .9);
+$font-size-mobile-large: calc(#{$font-size-mobile} * 1.25);
+$font-size-mobile-x-large: calc(#{$font-size-mobile} * 1.75);
+$font-size-mobile-xx-large: calc(#{$font-size-mobile} * 2);
+
+$line-height-regular: 1.5;
+$line-height-small: 1.1;
+$line-height-large: 1.75;
+//** -- typography -- **//
+
+//** -- size -- **//
+$space-regular: 1.58vw;
+$space-xx-small: calc(#{$space-regular} * .3);
+$space-x-small: calc(#{$space-regular} * .6);
+$space-small: calc(#{$space-regular} * .9);
+$space-large: calc(#{$space-regular} * 1.5);
+$space-x-large: calc(#{$space-regular} * 2.5);
+$space-xx-large: calc(#{$space-regular} * 3.5);
+
+$space-mobile: 1.75vmax;
+$space-mobile-xx-small: calc(#{$space-mobile} * .3);
+$space-mobile-x-small: calc(#{$space-mobile} * .6);
+$space-mobile-small: calc(#{$space-mobile} * .9);
+$space-mobile-large: calc(#{$space-mobile} * 1.5);
+$space-mobile-x-large: calc(#{$space-mobile} * 2.5);
+$space-mobile-xx-large: calc(#{$space-mobile} * 3.5);
+
+// horizontal - left, right //
+$margin-size-h: 7.14vw;
+// horizontal - left, right //
+
+// vertical - top, bottom //
+$margin-size-v: 3.7vw;
+// vertical - top, bottom //
+
+// -- width --//
+$width-1: 16.667%;
+$width-2: 33.334%;
+$width-3: 50%;
+$width-4: 66.668%;
+$width-5: 83.335%;
+$width-6: 100%;
+
+// fix width //
+$width-1-vw: 16.667vw;
+$width-2-vw: 33.334vw;
+$width-3-vw: 50vw;
+$width-4-vw: 66.668vw;
+$width-5-vw: 83.335vw;
+$width-6-vw: 100vw;
+
+$width-gap: $margin-size-v;
+$width-gap-mobile: $margin-size-h;
+$width-sidebar: $width-2;
+$width-content: $width-4; 
+// -- width --//
+//** -- size -- **//
+
+
+//** -- appearance -- **//
+$border-radius-small: .25em;
+$border-radius-regular: .5em;
+$border-radius-large: 3em;
+//** -- appearance -- **//
+
+
+//** -- buttons -- **//
+$button-size: 3.75em;
+//$button-size: 4em;
+$button-size-mobile: 4em;
+$button-padding: $space-regular;
+$button-padding-mobile: $space-mobile-large;
+
+$button-color: var(--color-base);
+$button-background: var(--color-content);
+$button-extra: var(--color-extra);
+
+$button-font-family: $font-secondary;
+$button-font-size: $font-size-small;
+$button-font-size-mobile: $font-size-mobile-xx-small;
+$button-font-weight: $font-weight-bold;
+
+$button-border-size: .15em;
+$border-radius-button: $border-radius-small;
+
+$flickity-prev-next-button: calc(#{$button-size} * .5);
+$flickity-prev-next-button-mobile: calc(#{$button-size-mobile} * .5);
+//** -- buttons -- **//
+
+
+//** -- base -- **//
+@mixin scrollbar-body() {
+	&::-webkit-scrollbar {
+        height: 1em;
+		width: 1em;
+        background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+        border: .25em solid var(--color-base);
+		background: var(--color-content);
+		border-radius: $border-radius-large;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--color-base);
+	}
+}
+
+@mixin scrollbar-modal() {
+	&::-webkit-scrollbar {
+        height: .5em;
+		width: .5em;
+        background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+        background: var(--color-modal-foreground);
+		border-radius: $border-radius-large;
+	}
+
+	&::-webkit-scrollbar-track {
+	}
+}
+
+@mixin cut-box() {
+    /*
+    @include mask(url() bottom center no-repeat);
+	@include mask-size(100% auto);
+	
+	@include for-phone-only {
+		@include mask-size(250% auto);
+	}
+    */
+}
+
+@mixin img-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+	
+	width: 100.01%;
+	height: 100.01%;
+	object-fit: cover;
+}
+
+@mixin button-round() {
+    padding-right: 3em;
+    padding-left: 3em;
+    border-radius: $border-radius-large;
+}
+
+@mixin search-round() {
+    border-radius: $border-radius-large;
+    
+    .field {
+        width: calc(100% - (#{$button-size} * 1.75));
+        padding-left: $space-x-large;
+        border-radius: $border-radius-large 0 0 $border-radius-large;
+        
+        @include for-phone-only {
+            width: calc(100% - (#{$button-size-mobile} * 1));
+            padding-left: $space-mobile-x-large;
+        }
+    }
+    
+    .submit {
+        width: calc(#{$button-size} * 1.75);
+        border-radius: 0 $border-radius-large $border-radius-large 0;
+        //border-radius: $border-radius-large;
+        
+        @include for-phone-only {
+            width: calc(#{$button-size-mobile} * 1);
+        }
+    }
+}
+
+@mixin border-box($property) {
+    box-shadow: 0 0 2em $property;
+}
+
+@mixin reset-border-box() {
+    box-shadow: none !important;
+}
+//** -- base -- **//
+
+
+//** -- typography -- **//
+@mixin text-transform() {
+	text-transform: uppercase;
+	letter-spacing: .075em;
+}
+
+@mixin reset-text-transform() {
+	text-transform: none;
+	letter-spacing: 0;
+}
+
+@mixin text-link() {
+	text-decoration: underline;
+	@include text-underline-position(under);
+}
+
+@mixin reset-text-link() {
+	text-decoration: none;
+}
+//** -- typography -- **//
+
+//** -- glass -- **//
+@mixin glass-box-light() {
+    border: 1px solid rgba(255, 255, 255, 0.44);
+    background: rgba(255, 255, 255, 0.45);
+    //box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);
+}
+//** -- glass ** //
+
+//* -- gradient bg -- **//
+@mixin grey-gradient-bg() {
+    background: var(--color-base);
+	background: linear-gradient(0deg, rgba(213,213,213,1) 0%, rgba(230,230,230,1) 27%, rgba(248,248,248,1) 100%);
+}
+
+@mixin black-gradient-bg() {
+    background: var(--color-content);
+    background: linear-gradient(0deg, rgba(28,28,28,1) 0%, rgba(46,46,46,1) 100%);
+}
+
+@mixin red-gradient-bg() {
+    background: var(--color-brand);
+	background: linear-gradient(0deg, rgba(84,8,32,1) 0%, rgba(149,1,47,1) 100%);
+}
+
+@mixin green-gradient-bg() {
+    background: var(--color-brand-secondary);
+	background: linear-gradient(0deg, rgba(66,68,1,1) 0%, rgba(102,104,8,1) 100%);
+}
+//* -- gradient bg -- **//

@@ -1,0 +1,13 @@
+// fix scale laytout //
+@media only screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.25) {
+  * {
+      font-size: 80%;
+    }
+}
+
+@media only screen and (min-device-width: 1200px) and (min-device-pixel-ratio: 1.25) {
+  * {
+      font-size: 80%;
+    }
+}
+// fix scale laytout //
