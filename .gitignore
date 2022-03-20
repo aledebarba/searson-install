@@ -1,5 +1,8 @@
 ./themes/node_modules/*
 ./themes/searson-theme/node_modules/*
 ./themes/searson-theme/modules/guts/node_modules/*
+*._
+**._
+**/*._
 *.log
 .env
