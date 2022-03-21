@@ -1,6 +1,6 @@
 FROM nginx:stable-alpine
 
-ADD ./nginx/default.conf /etc/nginx/conf.d/default.conf
-ADD ./nginx/certs /etc/nginx/certs/self-signed
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx/certs /etc/nginx/ssl
 
 RUN mkdir -p /var/www/html
