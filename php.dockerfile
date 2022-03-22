@@ -21,4 +21,4 @@ RUN apk add --no-cache --update autoconf
 RUN apk add --no-cache --update pkgconfig 
 RUN apk add --no-cache --update build-base
 RUN pecl install xdebug 
-RUN docker-php-ext-enable xdebug 
+RUN docker-php-ext-enable xdebug

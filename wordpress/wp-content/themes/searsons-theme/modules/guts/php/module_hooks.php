@@ -71,18 +71,15 @@ function handle_get_all( $data ) {
 function handle_get_valid( $data ) {
   $gut = new gutShopifyELT;
   $data = $gut->get('dbjson');
-
+  
   $q = new Jsonq($data);
   $q->where('status','=','ACTIVE');
 
   $priceMin = "";
   $priceMax = "";
-  
+
   foreach($_GET as $key => $value ) {
-    if ($key == "tags") { // TODO
-      print_r([$key, $value]);
-      $q->whereIn($value,"tags");      
-    } elseif  ( $key == "price-range" ) {
+    if ( $key == "price-range" ) {
       // resolve price-range tag
         preg_match('/f(.*?)t/', $value, $priceMin);
         preg_match('/t(.*?)\b/', $value, $priceMax);      
@@ -96,17 +93,31 @@ function handle_get_valid( $data ) {
         preg_match('/t(.*?)\b/', $value, $sweetMax);      
         $q->where("metakey-Sweetness",">",$sweetMin[1]);
         $q->where("metakey-Sweetness","<",$sweetMax[1]);        
-    }else {
+    } elseif ($key == "tags") {
+      // do nothing
+    } else {
       $q->where($key,'=',$value);
     }
   } 
 
   $filter = $q->from('products');
   $q->fetch();
-
-  $resJson = $filter->toJson();
+  $fiteredSearchResult = $filter->toJson();
+    
+  $searchtags = explode(",",$_GET['tags']);
   
-  return $resJson;
+  if(count($searchtags) > 0 && $searchtags[0] != "") {
+    $tagFilteredResults = array_filter($filter->toArray(), function($item) use ($searchtags) {
+      foreach($searchtags as $tag) {
+        if(in_array($tag, $item['tags'])) {
+          return true;
+        }
+      }
+    });
+    return json_encode($tagFilteredResults);
+  }
+  
+  return $fiteredSearchResult;
 }
 
 /**

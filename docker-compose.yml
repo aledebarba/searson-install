@@ -47,6 +47,7 @@ services:
     volumes:
       - ./wordpress:/var/www/html:delegated
       - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
     networks:
       - wordpress
 
@@ -60,7 +61,6 @@ services:
       - PHP_EXTENSION_XDEBUG=1
     volumes:
       - ./wordpress:/var/www/html:delegated
-      - ./php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ./php/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
     networks:
       - wordpress
